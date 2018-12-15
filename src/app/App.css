@@ -1,0 +1,30 @@
+.center_box{
+  position:fixed; /* change this to fixed */
+  margin-top: 2.5%;
+  margin-left: 5%;
+  width: 90%;
+  height: 90%;
+  border: 1px solid black;
+}
+
+@media only screen and (max-width: 600px) {
+  .center_box{
+    margin-top: 8%;
+  }
+}
+
+@media only screen{
+
+}
+
+.array_box{
+  width: 5em;
+  text-align:center;
+  height: 5em;
+  background-color: red;
+  display: inline-block;
+}
+
+.numbers{
+  padding-top: 40%;
+}
