@@ -28,3 +28,13 @@
 .numbers{
   padding-top: 40%;
 }
+
+.moveForward {
+  visibility: hidden;
+}
+
+.testbutton{
+  display: block;
+  width: 200px;
+  height: 100px;
+}
