@@ -11,7 +11,7 @@ export default class App extends React.Component{
       array : [],
       xPos : [],
       number_value: 10,
-      database_value: ''
+      selectValue: ''
     }
   }
 
@@ -45,7 +45,12 @@ export default class App extends React.Component{
 
   async searchingAlgorithm(array){
     const xArray = this.setBaseXValues();
-    bubbleSort(array, xArray);
+    if(this.state.selectValue === 'Bubble Sort'){
+      bubbleSort(array, xArray);
+    }
+    else if(this.state.selectValue === 'Selection Sort'){
+      selectionSort(array, xArray);
+    }
   }
 
   handle_number_change(value){
@@ -68,37 +73,40 @@ export default class App extends React.Component{
 
   handleSelectionChange(value){
     this.setState({
-      database_value: value
+      selectValue: value
     })
   }
 
   render() {
 
     return (
-      <div className="center_box">
-       <span style={{marginLeft: (100 - this.state.number_value*5) / 2 + "%"}}></span>
-        {
-          this.state.array.map(function(randomNumber, i){
-            return (
-              <div key={i} id={i} className ="array_box" ref='test' style={{
-                width: '5%',
-              }}>
-              <p className="numbers">{randomNumber}</p>
-            </div>
-            )
-          })
-        }
+      <div className="fullScreen">
+        <div className="center_box">
+        <span style={{marginLeft: (100 - this.state.number_value*5) / 2 + "%"}}></span>
+          {
+            this.state.array.map(function(randomNumber, i){
+              return (
+                <div key={i} id={i} className ="array_box" ref='test' style={{
+                  width: '5%',
+                }}>
+                <p className="numbers">{randomNumber}</p>
+              </div>
+              )
+            })
+          }
 
-      <div className="form">
-        <select className= "selection"  value={this.state.database_value} onChange={e => this.handleSelectionChange(e.target.value)}>
-          <option value="">Select your Sorting Algorithm</option>
-          <option value="Bubble Sort">Bubble Sort</option>
-          <option value="Selection Sort">Selection Sort</option>
-          <option value="Insertion Sort">Insertion Sort</option>
-          <option value="Quick Sort">Quick Sort</option>
-        </select>
-        <button className="testbutton" onClick={e => this.searchingAlgorithm(this.state.array)}>Reset Array</button>
-        <input className="sizeInput" type="number" min="0" max="20" value={this.state.number_value} onChange = {e => this.handle_number_change(e.target.value)}></input>
+        <div className="form">
+          <select className= "selection"  value={this.state.selectValue} onChange={e => this.handleSelectionChange(e.target.value)}>
+            <option value="">Select your Sorting Algorithm</option>
+            <option value="Bubble Sort">Bubble Sort</option>
+            <option value="Selection Sort">Selection Sort</option>
+            <option value="Insertion Sort">Insertion Sort (to be developed)</option>
+            <option value="Quick Sort">Quick Sort (to be developed)</option>
+          </select>
+          <input className="sizeInput" type="number" min="0" max="20" value={this.state.number_value} onChange = {e => this.handle_number_change(e.target.value)}></input>
+          <button className="testbutton" onClick={e => this.randomizeValues()}>Reset Array</button>
+          <button className="testbutton" onClick={e => this.searchingAlgorithm(this.state.array)}>Start Algorithm</button>
+          </div>
         </div>
       </div>
   );

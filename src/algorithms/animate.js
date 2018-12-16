@@ -44,7 +44,7 @@ async function swapAnimation(leftSquarePos, rightSquarePos, dataPointOne, dataPo
     targets: elementTwo,
     translateY: 0,
     trasnlateX: 0,
-  });
+  })
   temp = element.firstChild.innerHTML;
   element.firstChild.innerHTML = elementTwo.firstChild.innerHTML;
   elementTwo.firstChild.innerHTML = temp;
