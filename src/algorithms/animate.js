@@ -12,7 +12,7 @@ async function swapAnimation(leftSquarePos, rightSquarePos, dataPointOne, dataPo
   });
   await anime({
     targets: elementTwo,
-    translateY: 200,
+    translateY: -100,
     backgroundColor: '#33ccff'
   }).finished;
   await anime({
@@ -22,7 +22,7 @@ async function swapAnimation(leftSquarePos, rightSquarePos, dataPointOne, dataPo
   })
   await anime({
     targets: elementTwo,
-    translateY: 200,
+    translateY: -100,
     translateX: dataPointOne - dataPointTwo,
   }).finished;
   await anime({
@@ -44,7 +44,7 @@ async function swapAnimation(leftSquarePos, rightSquarePos, dataPointOne, dataPo
     targets: elementTwo,
     translateY: 0,
     trasnlateX: 0,
-  })
+  });
   temp = element.firstChild.innerHTML;
   element.firstChild.innerHTML = elementTwo.firstChild.innerHTML;
   elementTwo.firstChild.innerHTML = temp;

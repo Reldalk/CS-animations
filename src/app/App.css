@@ -1,9 +1,9 @@
 .center_box{
   position:fixed; /* change this to fixed */
-  margin-top: 2.5%;
+  margin-top: 5%;
   margin-left: 5%;
   width: 90%;
-  height: 90%;
+  height: 80%;
   border: 1px solid black;
 }
 
@@ -17,24 +17,55 @@
 
 }
 
-.array_box{
-  width: 5em;
+.array_box{ 
+  margin-top: 7%;
   text-align:center;
-  height: 5em;
   background-color: red;
   display: inline-block;
+  text-align: center;
+  height: 5em;
+}
+
+@media only screen and (max-height: 600px) {
+  .array_box{
+    height: 10%;
+  }
 }
 
 .numbers{
-  padding-top: 40%;
+  font-size: 25px;
+  margin-top: 30%;
+  font-weight: bold;
 }
 
-.moveForward {
-  visibility: hidden;
+@media only screen and (max-height: 600px) {
+  .numbers{
+    margin-top: 22%;
+    font-size: 15px;
+  }
+}
+
+
+.form{
+  margin-top: 15%;
 }
 
 .testbutton{
   display: block;
-  width: 200px;
-  height: 100px;
+  width: 15%;
+  margin: auto;
+}
+
+.selection{
+  display: block;
+  margin: auto;
+  width: 15%;
+  text-align: center;
+}
+
+.sizeInput{
+  display: block;
+  margin: auto;
+  width: 15%;
+  text-align: center;
 }
