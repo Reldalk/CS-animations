@@ -6,6 +6,7 @@ Animated Sorting is powered by the following,
 * React
 * Anime.js
 * CSS
+* Flexbox
 
 ## Summary
 This application will allow the user to select a sorting algorithm and visually see each step it takes. 
