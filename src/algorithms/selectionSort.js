@@ -1,4 +1,4 @@
-import {swapAnimation} from '../algorithms/animate'
+import {swapAnimation, paintCompleted} from '../algorithms/animate'
 
 function swap(array, i, j){
   let temp = array[i];
@@ -15,15 +15,16 @@ async function selectionSort(sortingArray, xArray){
       if(sortingArray[min] > sortingArray[j])
       {
         min = j;
-        console.log(sortingArray[min]);
       }
     }
     if(min !== i){
       swap(sortingArray, i, min)
       await swapAnimation(i, min, xArray[i], xArray[min]);
     }
+    paintCompleted(i);
   }
-  console.log(sortingArray);
+  paintCompleted(length - 1);
+  return 1;
 }
 
 export {selectionSort};

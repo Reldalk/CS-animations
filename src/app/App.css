@@ -1,59 +1,87 @@
 .fullScreen{
-  background-color: #e1e1e1;
+  background-color: lightgray;
   height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .center_box{
-  position:fixed; /* change this to fixed */
-  margin-top: 5%;
-  margin-left: 5%;
+  position: fixed;
   width: 90%;
   height: 80%;
+  margin-left: 5%;
   border: 1px solid black;
-  background-color: black;
+  background-color: #e1e1e1;
+}
+.colorRect{
+  margin-left: 25%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
 
-@media only screen and (max-width: 600px) {
-  .center_box{
-    margin-top: 8%;
-  }
+.keySection{
+  position: relative;
+  margin-top: 5%;
+  width: 100%;
+  height: 30.5%;
+  text-align: center;
 }
 
-@media only screen{
-
+.keyBox{
+  position: absolute;
+  width: 10%;
+  bottom: 1%;
+  right: 1.5%;
+  height: 40%;
+  text-align: center;
 }
+
+
+.unsorted{
+  background-color: lightskyblue
+}
+
+.sorted{
+  background-color: #90ee90;
+}
+
+.selected{
+  background-color: #f8d568;
+}
+
+.keyText{
+  font-size: 1em;
+}
+
 
 .array_box{ 
-  margin-top: 7%;
-  text-align:center;
-  background-color: red;
-  display: inline-block;
+  margin-top: 5%;
+  background-color: lightskyblue;
+  height: 9%;
+  width: auto;
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
   text-align: center;
-  height: 5em;
-}
-
-@media only screen and (max-height: 600px) {
-  .array_box{
-    height: 10%;
-  }
 }
 
 .numbers{
-  font-size: 25px;
-  margin-top: 30%;
+  font-size: 1em;
   font-weight: bold;
 }
 
-@media only screen and (max-height: 600px) {
-  .numbers{
-    margin-top: 22%;
-    font-size: 15px;
-  }
-}
 
 
 .form{
-  margin-top: 15%;
+  position: relative;
+  margin-top: 12%;
 }
 
 .testbutton{
@@ -61,6 +89,7 @@
   width: 15%;
   margin: auto;
 }
+
 
 .selection{
   display: block;
@@ -74,4 +103,112 @@
   margin: auto;
   width: 15%;
   text-align: center;
+}
+
+
+
+@media only screen and (max-width: 1500px){
+  .keyBox{
+    width: 15%;
+  }
+  .selection{
+    width: 25%;
+  }
+  .sizeInput{
+    width: 25%;
+  }
+  .testbutton{
+    width: 25%;
+  }
+}
+
+@media only screen and (max-width: 1050px){
+  .keyBox{
+    width: 15%;
+  }
+  .selection{
+    width: 35%;
+  }
+  .sizeInput{
+    width: 35%;
+  }
+  .testbutton{
+    width: 35%;
+  }
+  .form{
+    margin-top: 18%;
+  }
+  .array_box{
+    margin-top: 10%;
+  }
+}
+@media only screen and (max-width: 750px){
+  .keyBox{
+    width: 20%;
+  }
+  .selection{
+    width: 40%;
+  }
+  .sizeInput{
+    width: 40%;
+  }
+  .testbutton{
+    width: 40%;
+  }
+  .array_box{
+    height: 5%;
+  }
+}
+@media only screen and (max-width: 600px){
+  .keyBox{
+    width: 25%;
+  }
+  .selection{
+    width: 50%;
+  }
+  .sizeInput{
+    width: 50%;
+  }
+  .testbutton{
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 500px){
+  .keyBox{
+    width: 30%;
+  }
+  .numbers{
+    font-size: .8em;
+  }
+  .selection{
+    width: 60%;
+  }
+  .sizeInput{
+    width: 60%;
+  }
+  .testbutton{
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 410px){
+  .keyBox{
+    width: 35%;
+  }
+  .numbers{
+    font-size: .6em;
+  }
+  .selection{
+    width: 70%;
+  }
+  .sizeInput{
+    width: 70%;
+  }
+  .testbutton{
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 330px){
+  .keyBox{
+    width: 40%;
+  }
 }

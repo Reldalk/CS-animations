@@ -4,25 +4,25 @@ async function swapAnimation(leftSquarePos, rightSquarePos, dataPointOne, dataPo
   const element = document.getElementById(leftSquarePos);
   const elementTwo = document.getElementById(rightSquarePos);
   let temp;
-  console.log(dataPointTwo);
+  let elementHeight = elementTwo.clientHeight;
   await anime({
     targets: element,
-    translateY: 100,
-    backgroundColor: '#33ccff',
+    translateY: elementHeight,
+    backgroundColor: '#f8d568',
   });
   await anime({
     targets: elementTwo,
-    translateY: -100,
-    backgroundColor: '#33ccff'
+    translateY: -elementHeight,
+    backgroundColor: '#f8d568'
   }).finished;
   await anime({
     targets: element,
-    translateY: 100,
+    translateY: elementHeight,
     translateX: dataPointTwo - dataPointOne,
   })
   await anime({
     targets: elementTwo,
-    translateY: -100,
+    translateY: -elementHeight,
     translateX: dataPointOne - dataPointTwo,
   }).finished;
   await anime({
@@ -48,8 +48,23 @@ async function swapAnimation(leftSquarePos, rightSquarePos, dataPointOne, dataPo
   temp = element.firstChild.innerHTML;
   element.firstChild.innerHTML = elementTwo.firstChild.innerHTML;
   elementTwo.firstChild.innerHTML = temp;
-  element.style.backgroundColor = "red";
-  elementTwo.style.backgroundColor = "red";
+  element.style.backgroundColor = "lightskyblue";
+  elementTwo.style.backgroundColor = "lightskyblue";
 }
 
-export {swapAnimation};
+function paintCompleted(position){
+  const element = document.getElementById(position);
+  element.style.backgroundColor = "#90ee90";
+}
+
+function selectColorIndex(position){
+  const element = document.getElementById(position);
+  element.style.backgroundColor = "#02fff6";
+}
+
+function deselectColorIndex(position){
+  const element = document.getElementById(position);
+  element.style.backgroundColor = "lightskyblue";
+}
+
+export {swapAnimation, paintCompleted, selectColorIndex, deselectColorIndex};
